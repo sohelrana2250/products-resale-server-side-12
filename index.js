@@ -33,7 +33,8 @@ async function run() {
     try {
 
         const categoryCollection = client.db("PhoneResale").collection("phoneCategory");
-
+        //phoneDeatils
+        const phonedeailsCollection = client.db("PhoneResale").collection("phoneDeatils");
 
         app.get('/phoneCategory', async (req, res) => {
 
@@ -43,9 +44,32 @@ async function run() {
 
             res.send(result);
 
-
-
         })
+
+        app.get('/allPhoneDeails', async (req, res) => {
+
+            const query = {};
+
+            const cursor = phonedeailsCollection.find(query);
+            const result = await cursor.toArray();
+            res.send(result);
+        })
+
+        app.get('/allPhoneDeails/:id', async (req, res) => {
+
+            const id = req.params.id;
+
+            //console.log(id);
+
+
+            const query = { categoryID: id };
+
+            const cursor = phonedeailsCollection.find(query);
+            const result = await cursor.toArray();
+            res.send(result);
+        })
+
+
 
 
 

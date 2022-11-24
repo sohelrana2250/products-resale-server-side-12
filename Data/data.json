@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Samsung A20",
+        "categoryName": "Android",
+        "categoryID": "637ec52e291a873c0865b6bb",
+        "location": "Thakurgoan",
+        "resale_price": 600,
+        "orginal_price": 1000,
+        "used_year": "2 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://images.samsung.com/is/image/samsung/p6pim/bd/2202/gallery/bd-galaxy-a53-5g-a536-sm-a536elbgbkd-thumb-531570115?$320_320_PNG$",
+        "sallerName": "Sohel Rana"
+    },
+    {
+        "name": "Samsung A16",
+        "categoryName": "Android",
+        "categoryID": "637ec52e291a873c0865b6bb",
+        "location": "Dahaka",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://www.classyprice.com.bd/images/Samsung-Galaxy-A16.webp",
+        "sallerName": "Ali Mohammad"
+    },
+    {
+        "name": "1 plus 8 pro",
+        "categoryName": "Android",
+        "categoryID": "637ec52e291a873c0865b6bb",
+        "location": "Dahaka",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://cdn.techjuice.pk/wp-content/uploads/2021/02/oneplus-8-pakistan-priceoye-nu5si.jpg",
+        "sallerName": "A M SOHEL"
+    },
+    {
+        "name": "I Phone 7",
+        "categoryName": "Iphone",
+        "categoryID": "637ec52e291a873c0865b6bc",
+        "location": "Dahaka",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://www.bdstall.com/asset/product-image/giant_118765.jpg",
+        "sallerName": "Md Sunny"
+    },
+    {
+        "name": "I Phone 11",
+        "categoryName": "Iphone",
+        "categoryID": "637ec52e291a873c0865b6bc",
+        "location": "Dahaka",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://www.mobiledokan.com/wp-content/uploads/2019/09/Apple-iPhone-11.jpg",
+        "sallerName": "Shikdar MD Salman"
+    },
+    {
+        "name": "I Phone 13",
+        "categoryName": "Iphone",
+        "categoryID": "637ec52e291a873c0865b6bc",
+        "location": "Dahaka",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://images.macrumors.com/t/1WAa6WdZncknBxqwuT3-uQXWLIc=/800x0/smart/article-new/2020/10/iphone-13-models.jpg?lossy",
+        "sallerName": "Mahebur Rahman"
+    },
+    {
+        "name": "Tasla PIE 1",
+        "categoryName": "Tpie",
+        "categoryID": "637ec52e291a873c0865b6bd",
+        "location": "Panchogarh",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://qph.cf2.quoracdn.net/main-qimg-39fc25388005184619ef675f35625aa5-lq",
+        "sallerName": "Arman Hossain"
+    },
+    {
+        "name": "Tasla PIE 2",
+        "categoryName": "Tpie",
+        "categoryID": "637ec52e291a873c0865b6bd",
+        "location": "Panchogarh",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://www.mobiledokan.co/wp-content/uploads/2022/02/Tesla-Model-Pi.jpg",
+        "sallerName": "Akib Ahmad"
+    },
+    {
+        "name": "Tasla PIE 3",
+        "categoryName": "Tpie",
+        "categoryID": "637ec52e291a873c0865b6bd",
+        "location": "Panchogarh",
+        "resale_price": 500,
+        "orginal_price": 900,
+        "used_year": "1 years 6 month",
+        "post_date": "Thu Nov 24 2022 10:42:36 GMT+0600 (Bangladesh Standard Time)",
+        "img": "https://i.ytimg.com/vi/HPV1Q9Br49c/maxresdefault.jpg",
+        "sallerName": "Amir Hamza Arif"
+    }
+]
