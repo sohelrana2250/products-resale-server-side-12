@@ -3,6 +3,8 @@ const app = express();
 const port = process.env.PORT || 5010;
 const cors = require('cors');
 require('dotenv').config();
+const stripe = require("stripe")(process.env.STRIPE_SECRET);
+//console.log(stripe);
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 //meddile-were
@@ -36,6 +38,8 @@ async function run() {
         //phoneDeatils
         const phonedeailsCollection = client.db("PhoneResale").collection("phoneDeatils");
         const bookingCollection = client.db("PhoneResale").collection("booking");
+        const paymentCollection = client.db("PhoneResale").collection("payment");
+
         app.get('/phoneCategory', async (req, res) => {
 
             const query = {};
@@ -124,6 +128,61 @@ async function run() {
             res.send(result);
 
 
+        })
+
+        app.get('/booking/:id', async (req, res) => {
+
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+
+            const result = await bookingCollection.findOne(query);
+            res.send(result);
+        })
+
+        app.post('/create-payment-intent', async (req, res) => {
+
+            const booking = req.body;
+            const price = booking.price;
+            const amount = price * 100;
+            const paymentIntent = await stripe.paymentIntents.create({
+
+                currency: "usd",
+                amount: amount, "payment_method_types": [
+                    "card"
+                ]
+            });
+
+            res.send({
+                clientSecret: paymentIntent.client_secret,
+            });
+
+
+        })
+
+        app.post('/paymentReport', async (req, res) => {
+
+            const payment = req.body;
+            const result = await paymentCollection.insertOne(payment);
+            const id = payment.bookingId;
+            const filter = { _id: ObjectId(id) }
+
+            const updatedDoc = {
+                $set: {
+
+                    paid: true,
+
+                    transactionID: payment.transactionID
+                }
+            }
+
+
+
+            const updatedResult = await bookingCollection.updateOne(filter, updatedDoc);
+            console.log(updatedResult);
+
+
+
+            res.send(result);
         })
 
 
