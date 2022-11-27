@@ -178,10 +178,21 @@ async function run() {
 
 
             const updatedResult = await bookingCollection.updateOne(filter, updatedDoc);
-            console.log(updatedResult);
+            //console.log(updatedResult);
 
 
 
+            res.send(result);
+        })
+
+        app.delete('/allPhoneDeails/:id', async (req, res) => {
+
+            const id = req.params.id;
+            console.log(id);
+            const query = { _id: ObjectId(id) }
+
+            const result = await phonedeailsCollection.deleteOne(query);
+            console.log(result);
             res.send(result);
         })
 
