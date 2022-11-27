@@ -39,7 +39,7 @@ async function run() {
         const phonedeailsCollection = client.db("PhoneResale").collection("phoneDeatils");
         const bookingCollection = client.db("PhoneResale").collection("booking");
         const paymentCollection = client.db("PhoneResale").collection("payment");
-
+        const usersCollection = client.db("PhoneResale").collection("users");
         app.get('/phoneCategory', async (req, res) => {
 
             const query = {};
@@ -195,6 +195,61 @@ async function run() {
             console.log(result);
             res.send(result);
         })
+
+        app.post('/users', async (req, res) => {
+
+            const user = req.body;
+            const result = await usersCollection.insertOne(user);
+            //console.log(result);
+            res.send(result);
+
+        })
+
+        app.get('/users', async (req, res) => {
+
+
+            const query = {};
+            const result = await usersCollection.find(query).toArray();
+            res.send(result);
+
+
+        })
+
+        app.get('/users/admin/:email', async (req, res) => {
+
+            const email = req.params.email;
+
+
+            const query = { email: email }
+            const result = await usersCollection.findOne(query);
+            // //{ Admin: result?.role === 'admin' }
+            res.send({ Admin: result?.role === 'admin' });
+        })
+
+        app.put('/users/admin/:id', async (req, res) => {
+
+            const id = req.params.id;
+            console.log(id);
+            const filter = { _id: ObjectId(id) }
+            const options = { upsert: true };
+
+            const updatedDoc = {
+
+                $set: {
+
+                    role: 'admin'
+                }
+
+
+            }
+
+            const result = await usersCollection.updateOne(filter, updatedDoc, options);
+            res.send(result);
+
+
+        })
+
+
 
 
 
