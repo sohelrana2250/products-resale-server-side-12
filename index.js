@@ -15,6 +15,7 @@ app.use(express.json());
 //https://b612-used-products-resale-server-side-mu.vercel.app/users
 // https://b612-used-products-resale.web.app
 // https://b612-used-products-resale.web.app
+//https://b612-used-products-resale.firebaseapp.com/
 const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASSWORD}@cluster0.wqhd5vt.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
