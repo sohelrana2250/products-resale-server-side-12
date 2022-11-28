@@ -12,8 +12,10 @@ app.use(cors());
 app.use(express.json());
 
 
+//https://b612-used-products-resale-server-side-mu.vercel.app/users
+// https://b612-used-products-resale.web.app
+const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASSWORD}@cluster0.wqhd5vt.mongodb.net/?retryWrites=true&w=majority`;
 
-const uri = "mongodb+srv://phoneresale:8W7xxe9Tlln9ICjZ@cluster0.wqhd5vt.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 //username: phoneresale
@@ -40,6 +42,7 @@ async function run() {
         const bookingCollection = client.db("PhoneResale").collection("booking");
         const paymentCollection = client.db("PhoneResale").collection("payment");
         const usersCollection = client.db("PhoneResale").collection("users");
+        const reportCollection = client.db("PhoneResale").collection("report");
         app.get('/phoneCategory', async (req, res) => {
 
             const query = {};
@@ -247,6 +250,51 @@ async function run() {
             res.send(result);
 
 
+        })
+
+
+        app.get('/users/Buyer', async (req, res) => {
+
+            const query = { userType: "Beyer" }
+            const result = await usersCollection.find(query).toArray();
+            res.send(result);
+        })
+
+        app.get('/users/saller', async (req, res) => {
+
+            const query = { userType: 'Saler' }
+            const result = await usersCollection.find(query).toArray();
+            res.send(result);
+        })
+
+        app.delete('/userDelete/:id', async (req, res) => {
+
+            const id = req.params.id;
+            console.log(id);
+            const query = { _id: ObjectId(id) }
+            const result = await usersCollection.deleteOne(query);
+            res.send(result);
+
+
+
+
+        })
+
+
+        app.post('/productReport', async (req, res) => {
+
+            const report = req.body;
+            //console.log(report);
+            const result = await reportCollection.insertOne(report);
+            //console.log(report);
+            res.send(result);
+        })
+
+        app.get('/productReport', async (req, res) => {
+
+            const query = {};
+            const result = await reportCollection.find(query).toArray();
+            res.send(result);
         })
 
 
